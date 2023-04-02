@@ -22,16 +22,16 @@ jobs:
         go-version: 1.19
 
     - name: Build balance-service
-      run: go build -v ./balance-service
+      run: cd balance-service; go build -v ./...
 
     - name: Test balance-service
-      run: go test -v ./balance-service
+      run: cd balance-service; go test -v ./...
       
     - name: Build stats-service
-      run: go build -v ./stats
+      run: cd stats; go build -v ./...
 
     - name: Test stats-service
-      run: go test -v ./stats
+      run: cd stats; go test -v ./...
       
     - name: Run golangci-lint
       uses: golangci/golangci-lint-action@v3.3.1
